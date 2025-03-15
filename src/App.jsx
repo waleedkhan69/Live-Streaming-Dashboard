@@ -20,8 +20,8 @@ function App() {
   return (
     <Fragment>
 
-      <div className='flex  '>
-        <div className='  w-[20%]'>
+      <div className='flex bar   bg-yellow-400  '>
+        <div className='  w-[20%]  '>
           <SideBar />
         </div>
         <div className='w-[80%]'>

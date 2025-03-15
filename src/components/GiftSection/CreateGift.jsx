@@ -40,7 +40,7 @@ const CreateGift = ({ onAddGift }) => {
 
  return (
   <Fragment>
-   <div className="min-h-screen flex items-center justify-center bg-gray-100 p-4">
+   <div className=" overflow-y-scroll flex items-center justify-center bg-gray-100 p-4">
     <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
      <h1 className="text-2xl font-bold text-center mb-4">Create Gift</h1>
      <form onSubmit={handleClick} className="space-y-4">

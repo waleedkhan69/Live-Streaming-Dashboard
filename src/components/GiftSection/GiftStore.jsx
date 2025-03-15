@@ -24,7 +24,7 @@ const GiftStore = ({ gifts }) => {
    </div>
 
 
-   <div className="flex justify-start flex-wrap gap-4 ">
+   <div className="flex justify-start h-[70vh]  flex-wrap gap-4 ">
     {filteredGifts.map((gift, index) => (
      <div key={index} className="border w-[15%] h-[20%] bg-white p-2 rounded shadow">
       <img
@@ -37,9 +37,12 @@ const GiftStore = ({ gifts }) => {
        <p>Price: ${gift.price}</p>
        <button className="bg-green-600 px-2 py-1 rounded-xl text-white">send</button>
       </div>
+
      </div>
     ))}
+    <p>lorem3000</p>
    </div>
+
   </Fragment>
  );
 };
