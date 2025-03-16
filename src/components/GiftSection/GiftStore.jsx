@@ -26,11 +26,11 @@ const GiftStore = ({ gifts }) => {
 
    <div className="flex justify-start h-[70vh]  flex-wrap gap-4 ">
     {filteredGifts.map((gift, index) => (
-     <div key={index} className="border w-[15%] h-[20%] bg-white p-2 rounded shadow">
+     <div key={index} className="border w-[15%] h-[30%] bg-red-500 p-2 rounded shadow">
       <img
        src={URL.createObjectURL(gift.file)}
        alt={gift.type}
-       className="w-[100%]  object-cover rounded-md"
+       className="  object-cover  rounded-md"
       />
       <h2 className="text-lg font-bold mt-2">{gift.type}</h2>
       <div className="flex justify-between items-center">
@@ -40,7 +40,7 @@ const GiftStore = ({ gifts }) => {
 
      </div>
     ))}
-    <p>lorem3000</p>
+
    </div>
 
   </Fragment>
