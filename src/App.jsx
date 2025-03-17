@@ -11,6 +11,7 @@ import NotificationSystem from './components/Pages/NotificationSystem'
 import { ToastContainer } from 'react-toastify';
 import CreateGift from './components/GiftSection/CreateGift'
 import GiftStore from './components/GiftSection/GiftStore'
+import MediaControls from './components/Pages/MediaControls '
 function App() {
 
   const [gifts, setGifts] = useState([]);
@@ -24,13 +25,14 @@ function App() {
         <div className='  w-[20%]  '>
           <SideBar />
         </div>
-        <div className='w-[80%]'>
+        <div className='w-[80%] h-[90vh] bg-red-500 '>
           <Navbar />
           <NotificationSystem />
           <Routes>
             <Route path="/all-users" element={<GetAllUsers />} />
             <Route path="/real-time-analytics" element={<RealTimeAnalytics />} />
             <Route path="/creator-insight" element={<CreatorInsights />} />
+            <Route path="/media-controls" element={<MediaControls />} />
             <Route path="/create-gift" element={<CreateGift onAddGift={handleAddGift} />} />
             <Route path="/gift-store" element={<GiftStore gifts={gifts} />} />
 

@@ -11,6 +11,7 @@ const SideBar = () => {
   { path: "/gift-store", label: "Gift Store", icon: <FaStore className="group-hover:text-purple-500" /> },
   { path: "/active-user", label: "Likes", icon: <FaHeart className="group-hover:text-red-600" /> },
   { path: "/active-user", label: "Comment", icon: <FaComment className="group-hover:text-teal-400" /> },
+  { path: "/media-controls", label: "Media controles", icon: <FaComment className="group-hover:text-teal-400" /> },
  ];
 
 
