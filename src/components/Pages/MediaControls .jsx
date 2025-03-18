@@ -1,4 +1,5 @@
 import React, { useState, useRef } from 'react';
+import { toast } from 'react-toastify';
 
 const MediaControls = () => {
  const [isCameraOn, setIsCameraOn] = useState(true);
@@ -11,13 +12,13 @@ const MediaControls = () => {
 
  const toggleCamera = () => {
   setIsCameraOn((prev) => !prev);
-  tpa(isCameraOn ? '📷 Camera Turned OFF' : '📷 Camera Turned ON');
+  toast.success(isCameraOn ? '📷 Camera Turned OFF' : '📷 Camera Turned ON');
  };
 
 
  const toggleMic = () => {
   setIsMicOn((prev) => !prev);
-  alert(isMicOn ? '🎙️ Mic Turned OFF' : '🎙️ Mic Turned ON');
+  toast.success(isMicOn ? '🎙️ Mic Turned OFF' : '🎙️  Mic Turned ON');
  };
 
 
@@ -28,7 +29,7 @@ const MediaControls = () => {
     videoRef.current.srcObject = stream;
     setIsScreenSharing(true);
    } catch (error) {
-    alert('❌ Screen sharing failed!');
+    toast.error('❌ Screen sharing failed!');
    }
   } else {
    const tracks = videoRef.current.srcObject.getTracks();
@@ -44,7 +45,7 @@ const MediaControls = () => {
  };
 
  return (
-  <div className="p-5 bg-gray-100 rounded-lg shadow-lg space-y-5">
+  <div className="p-5  h-[90vh] overflow-auto  rounded-lg shadow-lg space-y-5">
 
 
    <div className="flex gap-4">
@@ -75,7 +76,7 @@ const MediaControls = () => {
     <video ref={videoRef} autoPlay className="mt-3 w-full rounded-md shadow-md" />
    </div>
 
-   {/* 🌟 Media Overlays */}
+
    <div>
     <h2 className="text-lg font-bold mb-2">🎨 Media Overlays</h2>
     <div className="flex gap-3">

@@ -25,7 +25,7 @@ function App() {
         <div className='  w-[20%]  '>
           <SideBar />
         </div>
-        <div className='w-[80%] h-[90vh] bg-red-500 '>
+        <div className='w-[80%] h-[90vh]  '>
           <Navbar />
           <NotificationSystem />
           <Routes>
@@ -42,7 +42,7 @@ function App() {
 
       </div >
       <ToastContainer />
-    </Fragment >
+    </Fragment>
   )
 }
 
