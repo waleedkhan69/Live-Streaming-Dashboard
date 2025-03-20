@@ -12,6 +12,10 @@ import { ToastContainer } from 'react-toastify';
 import CreateGift from './components/GiftSection/CreateGift'
 import GiftStore from './components/GiftSection/GiftStore'
 import MediaControls from './components/Pages/MediaControls '
+import UserModel from './components/Dashbord/Users/UserModel'
+import TotalUsers from './components/Dashbord/Users/TotalUsers'
+import MonthlyUsers from './components/Dashbord/Users/MothlyUsers'
+import WeeklyUsers from './components/Dashbord/Users/WeeklyUsers'
 function App() {
 
   const [gifts, setGifts] = useState([]);
@@ -21,15 +25,19 @@ function App() {
   return (
     <Fragment>
 
-      <div className='flex bar  '>
+      <div className='flex bar  bg-[#00294B] '>
         <div className='  w-[20%]  '>
           <SideBar />
         </div>
-        <div className='w-[80%] h-[90vh]  '>
+        <div className='w-[80%]  h-[90vh]  '>
           <Navbar />
           <NotificationSystem />
           <Routes>
-            <Route path="/all-users" element={<GetAllUsers />} />
+            <Route path="/" element={<UserModel />} />
+            <Route path="/total-user" element={<TotalUsers />} />
+            <Route path="/monthly-user" element={<MonthlyUsers />} />
+            <Route path="/weekly-user" element={<WeeklyUsers />} />
+
             <Route path="/real-time-analytics" element={<RealTimeAnalytics />} />
             <Route path="/creator-insight" element={<CreatorInsights />} />
             <Route path="/media-controls" element={<MediaControls />} />

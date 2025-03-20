@@ -4,7 +4,7 @@ import { IoSearchOutline } from "react-icons/io5";
 const Navbar = () => {
  return (
   <Fragment>
-   <nav className="bg-gray-800  w-full px-8 p-4   items-center justify-between flex">
+   <nav className="bg-[#16113A]  w-full px-8 p-4   items-center justify-between flex">
     <div>
      <p className="text-white font-semibold">Dashboard</p>
     </div>
