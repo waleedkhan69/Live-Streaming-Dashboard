@@ -10,7 +10,7 @@ import NotificationSystem from './components/Pages/NotificationSystem'
 
 import { ToastContainer } from 'react-toastify';
 
-import GiftStore from './components/GiftSection/GiftStore'
+// import GiftStore from './components/GiftSection/GiftStore'
 import MediaControls from './components/Pages/MediaControls '
 import UserModel from './components/Dashbord/Users/UserModel'
 import TotalUsers from './components/Dashbord/Users/TotalUsers'
@@ -18,10 +18,13 @@ import MonthlyUsers from './components/Dashbord/Users/MothlyUsers'
 import WeeklyUsers from './components/Dashbord/Users/WeeklyUsers'
 import CreateGift from './components/Dashbord/Gift/CreateGift'
 import AddGift from './components/Dashbord/Gift/AddGift'
-import MainSetting from './components/Dashbord/Settings/MainSetting'
+import AddEvent from './components/Dashbord/Event/AddEvent'
+import TotalEvent from './components/Dashbord/Event/TotalEvent'
+import AddGame from './components/Dashbord/GameImage/AddGame'
+// import MainSetting from './components/Dashbord/Settings/MainSetting'
 
 function App() {
-  const [shaw, setShow] = useState(true);
+  // const [shaw, setShow] = useState(true);
   // const [gifts, setGifts] = useState([]);
   // const handleAddGift = (newgift) => {
   //   setGifts((prevGift) => [...prevGift, newgift]);
@@ -30,11 +33,11 @@ function App() {
     <Fragment>
       <div className='flex bar  bg-[#00294B] '>
         <div className='  w-[20%]  '>
-          <SideBar setShow={setShow} />
+          <SideBar />
         </div>
         <div className='w-[80%]  h-[90vh]  '>
           <Navbar />
-          {shaw && < MainSetting setShow={setShow} />}
+          {/* {shaw && < MainSetting setShow={setShow} />} */}
           <NotificationSystem />
           <Routes>
             <Route path="/" element={<UserModel />} />
@@ -46,7 +49,10 @@ function App() {
             <Route path="/media-controls" element={<MediaControls />} />
             <Route path="/create-gift" element={<CreateGift />} />
             <Route path="/add-gift" element={<AddGift />} />
-            <Route path="/gift-store" element={<GiftStore />} />
+            <Route path="/add-event" element={<AddEvent />} />
+            <Route path="/total-event" element={<TotalEvent />} />
+            <Route path="/add-game" element={<AddGame />} />
+            {/* <Route path="/gift-store" element={<GiftStore />} /> */}
           </Routes>
         </div>
 
