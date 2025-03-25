@@ -17,7 +17,7 @@ const WithdrawRequest = () => {
    agentName: "Ahmed",
    coinsamout: 24,
    account: 300,
-   fee: "9876543",
+   fee: "9876",
   },
   {
    id: 3,
@@ -43,7 +43,7 @@ const WithdrawRequest = () => {
     <h1 className="text-3xl text-white">Total Withdraw</h1>
    </div>
    <div className=" flex justify-evenly items-center">
-    <h1 className="text-2xl text-gray-200">521</h1>
+    <h1 className="text-2xl text-gray-200">561</h1>
     <h1 className="text-2xl text-gray-200">2344</h1>
    </div>
    <table className="w-full text-center border-collapse border border-gray-300">
