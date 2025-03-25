@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import { FaUsers, FaChartLine, FaLightbulb, FaGift, FaStore, FaHeart, FaComment } from "react-icons/fa";
-import { MdOutlineEvent } from "react-icons/md";
+import { RiSecurePaymentFill } from "react-icons/ri";
 
+import { MdOutlineEvent } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { IoIosLogOut } from "react-icons/io";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
 import { HiUsers } from "react-icons/hi";
-
 import { PiUsersThreeLight } from "react-icons/pi";
-
 import { CiSettings } from "react-icons/ci";
 import { RiArrowDownSLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
-
+import AdminSettings from "./Settings/AdminSetting.jsx";
 const SideBar = ({ setShow }) => {
   const [showUserDetails, setShowUserDetails] = useState(false);
   const [showSettings, setShowSettings] = useState(false);
@@ -27,8 +26,9 @@ const SideBar = ({ setShow }) => {
     { path: "/add-event", label: "Add Event", icon: <MdOutlineEvent className="group-hover:text-purple-500" /> },
     { path: "/total-event", label: "Total Event", icon: <FaStore className="group-hover:text-purple-500" /> },
     { path: "/add-game", label: "Add Game", icon: <FaStore className="group-hover:text-purple-500" /> },
-    { path: "/active-user", label: "Likes", icon: <FaHeart className="group-hover:text-red-600" /> },
-    { path: "/active-user", label: "Comment", icon: <FaComment className="group-hover:text-teal-400" /> },
+    { path: "/payment-method", label: "Payment Method", icon: <RiSecurePaymentFill className="group-hover:text-red-600" /> },
+    { path: "/agent-request", label: "Agent Request", icon: <FaComment className="group-hover:text-teal-400" /> },
+    { path: "/withdraw-request", label: "Withdraw Request", icon: <FaComment className="group-hover:text-teal-400" /> },
     { path: "/media-controls", label: "Media controles", icon: <FaComment className="group-hover:text-teal-400" /> },
     { label: "Settings", icon: <CiSettings className="group-hover:text-blue-400" />, onClick: () => setShowSettings(!showSettings) }
   ];
@@ -39,16 +39,6 @@ const SideBar = ({ setShow }) => {
     { path: "/weekly-user", label: "Weekly Users", icon: <HiUsers className="text-blue-400" /> }
   ];
 
-  const Settings = [
-    { path: "/admin-profile", id: 1, label: "Admin Profile", icon: <CgProfile className="text-blue-400" /> },
-    {
-      path: "/sub-admin", id: 2, label: "Add Subadmin", icon: <MdOutlineAdminPanelSettings
-        className="text-blue-400" />
-    },
-    {
-      path: "/logout", id: 3, label: "Logout", icon: <IoIosLogOut className="text-blue-400" />
-    }
-  ];
 
   return (
     <div className="h-[96vh] text-sm bg-[#16113A] border-r overflow-auto w-full shadow-md py-6 px-4 pb-2 transition duration-400 scrollbar-hide hover:scrollbar-thin hover:scrollbar-thumb-gray-700 hover:scrollbar-track-gray-400" style={{ scrollbarWidth: "none" }}>
@@ -92,20 +82,10 @@ const SideBar = ({ setShow }) => {
                 ))}
               </div>
             )}
-
-
             {item.label === "Settings" && showSettings && (
-              <div className="flex flex-col gap-4 mt-7 ml-2 ">
-                {Settings.map((setting, index) => (
-                  <div key={index[setting.id]} className="flex items-center gap-3 text-white">
-                    {setting.icon}
-                    <Link to={setting.path} className="text-md font-medium">
-                      {setting.label}
-                    </Link>
-                  </div>
-                ))}
-              </div>
+              <AdminSettings />
             )}
+
           </div>
         ))}
       </div>

@@ -21,14 +21,16 @@ import AddGift from './components/Dashbord/Gift/AddGift'
 import AddEvent from './components/Dashbord/Event/AddEvent'
 import TotalEvent from './components/Dashbord/Event/TotalEvent'
 import AddGame from './components/Dashbord/GameImage/AddGame'
-// import MainSetting from './components/Dashbord/Settings/MainSetting'
+import PaymentMethod from './components/Dashbord/Payment/PaymentMethod'
+import AgentRequest from './components/Dashbord/AgentSection/AgentRequest'
+import WithdrawRequest from './components/Dashbord/withdrawSection/WithdrawRequest'
+
+
+
 
 function App() {
-  // const [shaw, setShow] = useState(true);
-  // const [gifts, setGifts] = useState([]);
-  // const handleAddGift = (newgift) => {
-  //   setGifts((prevGift) => [...prevGift, newgift]);
-  // }
+
+
   return (
     <Fragment>
       <div className='flex bar  bg-[#00294B] '>
@@ -37,9 +39,10 @@ function App() {
         </div>
         <div className='w-[80%]  h-[90vh]  '>
           <Navbar />
-          {/* {shaw && < MainSetting setShow={setShow} />} */}
+
           <NotificationSystem />
           <Routes>
+
             <Route path="/" element={<UserModel />} />
             <Route path="/total-user" element={<TotalUsers />} />
             <Route path="/monthly-user" element={<MonthlyUsers />} />
@@ -52,11 +55,15 @@ function App() {
             <Route path="/add-event" element={<AddEvent />} />
             <Route path="/total-event" element={<TotalEvent />} />
             <Route path="/add-game" element={<AddGame />} />
+            <Route path="/payment-method" element={<PaymentMethod />} />
+            <Route path="/agent-request" element={<AgentRequest />} />
+            <Route path="/withdraw-request" element={<WithdrawRequest />} />
             {/* <Route path="/gift-store" element={<GiftStore />} /> */}
           </Routes>
         </div>
 
       </div >
+
       <ToastContainer />
     </Fragment>
   )

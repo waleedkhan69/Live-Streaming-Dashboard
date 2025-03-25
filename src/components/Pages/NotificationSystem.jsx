@@ -1,21 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-
 const NotificationSystem = () => {
   const [notifications, setNotifications] = useState([]);
-
-
   const addNotification = (message, type) => {
     const newNotification = { id: Date.now(), message, type };
     setNotifications((prev) => [...prev, newNotification]);
-
-
     setTimeout(() => {
       setNotifications((prev) => prev.filter((n) => n.id !== newNotification.id));
     }, 5000);
   };
-
-
   useEffect(() => {
     const interval = setInterval(() => {
       const alerts = [

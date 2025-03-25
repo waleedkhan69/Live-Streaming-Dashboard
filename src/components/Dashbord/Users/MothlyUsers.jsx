@@ -1,10 +1,8 @@
 import React, { Fragment } from "react"
 import img from "../../../assets/user.webp"
 import { IoIosSearch } from "react-icons/io";
-
 const MonthlyUsers = () => {
  const [searchquery, setSearchQuery] = React.useState("");
-
  const TotalUsers = [
   { coins: 100, pic: img, name: "waleed", idLevel: 1, emai: "waleed@gmail.com" },
   { coins: 100, pic: img, name: "naveed", idLevel: 1, emai: "waleed@gmail.com" },
@@ -16,8 +14,6 @@ const MonthlyUsers = () => {
  const searchDataFilter = TotalUsers.filter(item => item.name.toLowerCase().includes(searchquery.toLowerCase()) ||
   item.idLevel.toString().toLowerCase().includes(searchquery.trim().toLowerCase()) ||
   item.emai.toLowerCase().includes(searchquery.trim().toLowerCase()));
-
-
 
  return (
   <Fragment>
