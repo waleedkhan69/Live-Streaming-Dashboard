@@ -5,7 +5,7 @@ import { PieChart, Pie, Cell } from "recharts";
 const RADIAN = Math.PI / 180;
 const totalUsers = 30765;
 const monthlyUsers = 9500;
-const weeklyUsers = 8000;
+const weeklyUsers = 2489;
 
 const createData = (value) => [
  { name: "Used", value, color: "#4CAF50" },

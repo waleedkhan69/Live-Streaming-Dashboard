@@ -1,15 +1,22 @@
 import React, { useState } from "react";
 import { FaUsers, FaChartLine, FaLightbulb, FaGift, FaStore, FaHeart, FaComment } from "react-icons/fa";
 import { RiSecurePaymentFill } from "react-icons/ri";
+import { IoLogoGameControllerB } from "react-icons/io";
+import { GoGitPullRequest } from "react-icons/go";
+import { BiMoneyWithdraw } from "react-icons/bi";
+import { SiOpenmediavault } from "react-icons/si";
+
 
 import { MdOutlineEvent } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
 import { IoIosLogOut } from "react-icons/io";
-import { MdOutlineAdminPanelSettings } from "react-icons/md";
+import { MdOutlineAdminPanelSettings, MdOutlineEventSeat } from "react-icons/md";
 import { HiUsers } from "react-icons/hi";
 import { PiUsersThreeLight } from "react-icons/pi";
 import { CiSettings } from "react-icons/ci";
 import { RiArrowDownSLine } from "react-icons/ri";
+
+
 import { Link } from "react-router-dom";
 import AdminSettings from "./Settings/AdminSetting.jsx";
 const SideBar = ({ setShow }) => {
@@ -24,12 +31,12 @@ const SideBar = ({ setShow }) => {
     { path: "/add-gift", label: "Add Gift ", icon: <FaGift className="group-hover:text-pink-400" /> },
     { path: "/gift-store", label: "Gift Store", icon: <FaStore className="group-hover:text-purple-500" /> },
     { path: "/add-event", label: "Add Event", icon: <MdOutlineEvent className="group-hover:text-purple-500" /> },
-    { path: "/total-event", label: "Total Event", icon: <FaStore className="group-hover:text-purple-500" /> },
-    { path: "/add-game", label: "Add Game", icon: <FaStore className="group-hover:text-purple-500" /> },
+    { path: "/total-event", label: "Total Event", icon: <MdOutlineEventSeat className="group-hover:text-purple-500" /> },
+    { path: "/add-game", label: "Add Game", icon: <IoLogoGameControllerB className="group-hover:text-purple-500" /> },
     { path: "/payment-method", label: "Payment Method", icon: <RiSecurePaymentFill className="group-hover:text-red-600" /> },
-    { path: "/agent-request", label: "Agent Request", icon: <FaComment className="group-hover:text-teal-400" /> },
-    { path: "/withdraw-request", label: "Withdraw Request", icon: <FaComment className="group-hover:text-teal-400" /> },
-    { path: "/media-controls", label: "Media controles", icon: <FaComment className="group-hover:text-teal-400" /> },
+    { path: "/agent-request", label: "Agent Request", icon: <GoGitPullRequest className="group-hover:text-teal-400" /> },
+    { path: "/withdraw-request", label: "Withdraw Request", icon: <BiMoneyWithdraw className="group-hover:text-teal-400" /> },
+    { path: "/media-controls", label: "Media controles", icon: <SiOpenmediavault className="group-hover:text-teal-400" /> },
     { label: "Settings", icon: <CiSettings className="group-hover:text-blue-400" />, onClick: () => setShowSettings(!showSettings) }
   ];
 
