@@ -29,7 +29,7 @@ const MediaControls = () => {
     videoRef.current.srcObject = stream;
     setIsScreenSharing(true);
    } catch (error) {
-    toast.error('❌ Screen sharing failed!');
+    toast.error(' Screen sharing failed!');
    }
   } else {
    const tracks = videoRef.current.srcObject.getTracks();

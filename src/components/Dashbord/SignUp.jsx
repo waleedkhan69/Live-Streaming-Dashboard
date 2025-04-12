@@ -3,10 +3,38 @@ import { IoPersonCircleOutline } from "react-icons/io5";
 import { MdEmail } from "react-icons/md";
 import { RiLockPasswordFill } from "react-icons/ri";
 import { FaEyeSlash, FaRegEye } from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const SignUp = () => {
  const [isPasswordShow, setIsPasswordShow] = useState(false);
+ const [formData, setFormData] = useState({
+  name: "",
+  email: "",
+  password: ""
+ })
+ const navigate = useNavigate()
+
+ const handleSubmit = (e) => {
+  e.preventDefault()
+  const { name, password, email } = formData
+  if (!name || !email || !password) {
+   alert("please fill all the field ")
+  } else {
+   localStorage.setItem("token", "waleed123")
+   navigate("/")
+  }
+
+ }
+ const handleChange = (e) => {
+  const { name, value } = e.target
+  setFormData((prev) => ({
+   ...prev,
+   [name]: value
+  }))
+ }
+
+
+
 
  return (
   <Fragment>
@@ -16,7 +44,7 @@ const SignUp = () => {
       <h1 className="font-bold text-2xl text-blue-600">Sign Up</h1>
       <p className="text-gray-600 text-sm">Create your account</p>
      </div>
-     <form className="space-y-5">
+     <form className="space-y-5" onSubmit={handleSubmit}>
 
       <div>
        <label className="block font-medium text-gray-700 mb-1">Name</label>
@@ -24,19 +52,23 @@ const SignUp = () => {
         <IoPersonCircleOutline className="text-blue-600 text-xl mr-2" />
         <input
          type="text"
+         name="name"
+         value={formData.name}
+         onChange={handleChange}
          placeholder="Enter your name"
          className="w-full outline-none text-gray-800 placeholder-gray-400"
         />
        </div>
       </div>
-
-
       <div>
        <label className="block font-medium text-gray-700 mb-1">Email</label>
        <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2">
         <MdEmail className="text-blue-600 text-xl mr-2" />
         <input
-         type="email"
+         type="text"
+         name="email"
+         value={formData.email}
+         onChange={handleChange}
          placeholder="Enter your email"
          className="w-full outline-none text-gray-800 placeholder-gray-400"
         />
@@ -49,8 +81,11 @@ const SignUp = () => {
        <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2">
         <RiLockPasswordFill className="text-blue-600 text-xl mr-2" />
         <input
+         name="password"
+         value={formData.password}
          type={isPasswordShow ? "text" : "password"}
          placeholder="Enter your password"
+         onChange={handleChange}
          className="w-full outline-none text-gray-800 placeholder-gray-400"
         />
         <span
@@ -90,6 +125,6 @@ const SignUp = () => {
    </div>
   </Fragment>
  );
-};
 
+}
 export default SignUp;

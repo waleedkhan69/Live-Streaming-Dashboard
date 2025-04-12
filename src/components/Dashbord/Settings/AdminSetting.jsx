@@ -13,6 +13,7 @@ const AdminSettings = () => {
  }
  const handleLogout = () => {
   console.log("User Logged Out");
+  localStorage.removeItem("token")
   navigate("/login");
  };
 

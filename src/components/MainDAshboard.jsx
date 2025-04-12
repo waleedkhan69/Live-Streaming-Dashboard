@@ -1,4 +1,4 @@
-import { Fragment } from "react"
+import React, { Fragment } from "react"
 import AgentRequest from "./Dashbord/AgentSection/AgentRequest"
 import AddEvent from "./Dashbord/Event/AddEvent"
 import TotalEvent from "./Dashbord/Event/TotalEvent"
@@ -14,6 +14,10 @@ import WithdrawRequest from "./Dashbord/withdrawSection/WithdrawRequest"
 import CreatorInsights from "./Pages/CreatorInsight"
 import MediaControls from "./Pages/MediaControls "
 import RealTimeAnalytics from "./Pages/RealTimeAnalytics"
+import SideBar from "./Dashbord/SideBar"
+import Navbar from "./Dashbord/Navbar"
+import NotificationSystem from "../components/Pages/NotificationSystem"
+import { Route, Routes } from "react-router-dom"
 
 const MainDAshboard = () => {
  return (
@@ -26,7 +30,7 @@ const MainDAshboard = () => {
      <Navbar />
      <NotificationSystem />
      <Routes>
-      <Route path="/dasboard" element={<UserModel />} />
+      <Route path="/" element={<UserModel />} />
       <Route path="/total-user" element={<TotalUsers />} />
       <Route path="/monthly-user" element={<MonthlyUsers />} />
       <Route path="/weekly-user" element={<WeeklyUsers />} />
@@ -41,11 +45,9 @@ const MainDAshboard = () => {
       <Route path="/payment-method" element={<PaymentMethod />} />
       <Route path="/agent-request" element={<AgentRequest />} />
       <Route path="/withdraw-request" element={<WithdrawRequest />} />
-
      </Routes>
     </div>
    </div >
-
   </Fragment>
  )
 }

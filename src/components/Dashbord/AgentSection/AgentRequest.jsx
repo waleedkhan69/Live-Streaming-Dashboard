@@ -1,6 +1,5 @@
 import { Fragment } from "react"
 import React from "react"
-
 const AgentRequest = () => {
  const paymentMethodArry = [
   {

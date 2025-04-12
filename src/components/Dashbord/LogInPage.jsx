@@ -1,8 +1,15 @@
 import React, { useState, Fragment } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
 
 const LogInPage = () => {
  const [isPasswordShow, setIsPasswordShow] = useState(false);
+ const navigate = useNavigate()
+ const handleSubmit = (e) => {
+  e.preventDefault()
+  localStorage.setItem("token", "waleed123")
+  navigate("/")
+ }
 
  return (
   <Fragment>
@@ -13,8 +20,8 @@ const LogInPage = () => {
       <p className="text-sm text-gray-600">Please enter your details</p>
      </div>
 
-     <form>
-      {/* Email */}
+     <form onSubmit={handleSubmit}>
+
       <div className="mb-4">
        <label className="block font-medium text-gray-700 mb-1">Email Address</label>
        <input
@@ -24,7 +31,7 @@ const LogInPage = () => {
        />
       </div>
 
-      {/* Password */}
+
       <div className="mb-4">
        <label className="block font-medium text-gray-700 mb-1">Password</label>
        <div className="flex items-center border border-gray-300 rounded-lg px-3 py-2">
@@ -46,7 +53,7 @@ const LogInPage = () => {
        </div>
       </div>
 
-      {/* Remember me & Forgot password */}
+
       <div className="flex justify-between items-center mb-5 text-sm">
        <div className="flex items-center gap-2">
         <input type="checkbox" className="cursor-pointer" />
